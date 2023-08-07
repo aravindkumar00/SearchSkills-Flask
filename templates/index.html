@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search skills in Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Search skills in Profile</h1>
+    <form method="post" action="/search" enctype="multipart/form-data">
+        <div class="div2">
+            <div class="div1">
+                <label class="l1">Please upload a file</label><br>
+                <input class="input1" type="file" name="file" accept=".pdf,.docx" required>
+            </div>
+            <div class="div1">
+                <label style="margin-right: 16px" class="l1" for="words">please enter skills</label>
+            </div>
+            <div class="div1">
+                <input class="input2" type="text" name="words" id="words" required>
+            </div>
+            <div class="div1">
+                <button class="b1" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    {% if msg %}
+        <h3 class="error3">{{msg}}</h3>
+    {% endif %}
+    {% if sus %}
+        <h3 class="error1">{{sus}}</h3>
+    {% endif %}
+    <div id="results">
+        {% if error1 %}
+            <h3 class="error3">{{error1}} due to profile don't have these skills</h3>
+            {% if mat %}
+                {% for match in mat %}
+                    <li class="l3">{{ match }}</li>
+                {% endfor %}
+            {%endif%}
+        {%endif %} 
+        {% if matches %} 
+            <h3 class="error2">Profile not shortlisted your profile matching only these skills:</h3>
+                {% for match in matches %}
+                    <li class="l3">{{ match }}</li>
+                {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+     <link rel="stylesheet" href={{url_for('static',filename='styles.css')}}>
+    <h1>User login</h1>
+</head>
+<body style="padding-top:60px;background-color:lightgray;">
+<form method="post" action="/Home" enctype="multipart/form-data">
+    <div class="divv2">
+        <div class="divv1">
+            <label class="ll1">Username</label>
+            <input class="txt1"  id="user" type="text" name="uname">
+        </div>
+        <div class="divv1">
+            <label class="ll1">Password</label>
+            <input class="txt1" id="pass" style="margin-left:6px;" type="password" name="passw">
+        </div>
+        <div class="divv1" >
+            <button type="submit" class="bb1">Submit</button>
+        </div>
+    </div>
+    {% if error1 %}
+        <p class="p1">{{error1}}</p>
+    {% endif %}
+</form>
+
+</body>
+</html>
