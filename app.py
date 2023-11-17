@@ -178,4 +178,4 @@ def store_candidateDetails(name, email, mobile_number):
     mysql.connection.commit()
     cur.close()
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
