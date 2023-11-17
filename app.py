@@ -10,7 +10,7 @@ from PyPDF2 import PdfReader
 app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_USER'] = 'aravind'
 app.config['MYSQL_PASSWORD'] = 'Aravind@111'
 app.config['MYSQL_DB'] = 'aravind'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
